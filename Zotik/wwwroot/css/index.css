@@ -1,0 +1,55 @@
+body {
+    background-image: url("../Images/asanoha-400px-ROUGE.jpg");
+}
+
+
+img .img-responsive {
+    width: 20em;
+    height: 20em;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+}
+
+.product-title {
+    height: 5em;
+}
+
+.row {
+    align-content: center;
+}
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+width: 100%; /* use this, or not */
+margin: auto;
+}
+
+hr {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+h4 {
+    font-size: 15px;
+}
+div.row>div>p {
+    height: 4em;
+}
+
+.item-info {
+    font-size: 1.5em;
+}
+
+#product-title {
+    font-size: 2em;
+    text-align: center;
+    align-content: center;
+    padding: 1em 0em;
+}
