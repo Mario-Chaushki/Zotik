@@ -54,7 +54,7 @@ namespace Zotik.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Type,Material")] Pad pad)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Type,Material,ImageName")] Pad pad)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Zotik.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Type,Material")] Pad pad)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Type,Material,ImageName")] Pad pad)
         {
             if (id != pad.Id)
             {

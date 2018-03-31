@@ -9,11 +9,13 @@
         <br />
         <div class="row center-block">
             @{
-                foreach (Pad pad in Model)
-                {
-                    var imgSource = "~/images/products/" + pad.ImageName;
+                    var pads = Model.OrderBy(p => p.Type).ThenBy(p => p.Type).ToList();
 
-                    <div class="col-sm-4 col-md-3 col-xs-6">
+                    foreach (Pad pad in pads)
+                    {
+                        var imgSource = Url.Content("~/images//products/" + pad.ImageName);
+
+                    <div class="col-sm-4 col-md-3 col-xs-12 text-center">
                         <div class="product-title">
                             <h4>@pad.Name</h4>
                         </div>
