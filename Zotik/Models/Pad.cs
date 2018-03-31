@@ -22,5 +22,8 @@ namespace Zotik.Models
 
         [DisplayName("Материал")]
         public Materials Material { get; set; }
+
+        [DisplayName("Име на снимката")]
+        public string ImageName { get; set; }
     }
 }
