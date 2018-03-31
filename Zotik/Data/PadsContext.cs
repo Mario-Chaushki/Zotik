@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Zotik.Models
 {
-    public class ZotikContext : DbContext
+    public class PadsContext : DbContext
     {
-        public ZotikContext (DbContextOptions<ZotikContext> options)
+        public PadsContext (DbContextOptions<PadsContext> options)
             : base(options)
         {
         }

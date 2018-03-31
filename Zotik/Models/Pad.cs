@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Zotik.Enums;
 
 namespace Zotik.Models
 {
+    [Table("Pads")]
     public class Pad
     {
         [Required]
