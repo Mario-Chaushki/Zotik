@@ -14,11 +14,5 @@ namespace Zotik.Controllers
             ViewBag.Title = "Начална страница";
             return View();
         }
-
-        public IActionResult Products()
-        {
-            ViewBag.Title = "Продукти";
-            return View();
-        }
     }
 }

@@ -21,6 +21,7 @@ namespace Zotik.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+            ViewBag.Title = "Продукти";
             return View(await _context.Pad.ToListAsync());
         }
 
