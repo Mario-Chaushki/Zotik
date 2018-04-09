@@ -29,6 +29,7 @@
                 <li class="active">  <a asp-area="" asp-controller="Home" asp-action="Index">Начална страница</a></li>
                 <li class="active">  <a asp-area="" asp-controller="Products" asp-action="Index">Продукти</a></li>
             </ul>
+            @await Html.PartialAsync("_LoginPartial")
         </div>
     </header>
     <div class="container body-content">

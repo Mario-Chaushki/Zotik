@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication2.Controllers;
+using Zotik.Controllers;
 
 namespace Microsoft.AspNetCore.Mvc
 {

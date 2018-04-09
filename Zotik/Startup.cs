@@ -29,6 +29,9 @@ namespace Zotik
             services.AddDbContext<PadsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PadsContext")));
 
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
