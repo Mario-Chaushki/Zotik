@@ -23,11 +23,11 @@
     <header>
         <div id="navigation" class="navbar navbar-default navbar-dropdown">
             <div class="navbar-header">
-                <a href="#" class="navbar-brand">Zotik-95</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Zotik-95</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active">  <a asp-area="" asp-controller="Home" asp-action="Index">Начална страница</a></li>
-                <li class="active">  <a asp-area="" asp-controller="Products" asp-action="Index">Продукти</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Начална страница</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Products">Продукти</a></li>
             </ul>
             @await Html.PartialAsync("_LoginPartial")
         </div>
