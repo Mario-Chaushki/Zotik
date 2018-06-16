@@ -15,15 +15,20 @@
                     {
                         var imgSource = Url.Content("~/images//products/" + pad.ImageName);
 
-                    <div class="col-sm-4 col-md-3 col-xs-12 text-center">
-                        <div class="product-title">
-                            <h4>@pad.Name</h4>
-                        </div>
-                        <img src="@imgSource"
-                             class="img-thumbnail img-responsive"
-                             alt="Дамски Превръзки Дневни Памук 10 броя" />
-                        <p>@pad.Description</p>
-                    </div>
+            <div class="col-sm-4 col-md-3 col-xs-12 text-center">
+                <div class="product-title">
+                    <a href="@Url.Action("Details", "Products", new { id = pad.Id })">
+                        <h4>@pad.Name</h4>
+                    </a>
+
+                </div>
+                <a href="@Url.Action("Details", "Products", new { id = pad.Id })">
+                    <img src="@imgSource"
+                         class="img-thumbnail img-responsive"
+                         alt="Дамски Превръзки Дневни Памук 10 броя" />
+                </a>
+                <p>@pad.Description</p>
+            </div>
                 }
             }
         </div>
