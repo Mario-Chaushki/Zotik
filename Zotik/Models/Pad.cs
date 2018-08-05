@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Zotik.Enums;
@@ -23,7 +24,10 @@ namespace Zotik.Models
         [DisplayName("Материал")]
         public Materials Material { get; set; }
 
-        [DisplayName("Име на снимката")]
-        public string ImageName { get; set; }
+        //[DisplayName("Име на снимката")]
+        //public string ImageName { get; set; }
+
+        [DisplayName("Снимка")]
+        public byte[] Image { get; set; }
     }
 }

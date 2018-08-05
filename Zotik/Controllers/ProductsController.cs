@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -57,10 +59,22 @@ namespace Zotik.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Type,Material,ImageName")] Pad pad)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Type,Material,Image")] Pad pad, IEnumerable<IFormFile> Image)
         {
             if (ModelState.IsValid)
             {
+                foreach (var item in Image)
+                {
+                    if (item.Length > 0)
+                    {
+                        using (var stream = new MemoryStream())
+                        {
+                            await item.CopyToAsync(stream);
+                            pad.Image = stream.ToArray();
+                        }
+                    }
+                }
+
                 _context.Add(pad);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -91,7 +105,7 @@ namespace Zotik.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Type,Material,ImageName")] Pad pad)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Type,Material,Image")] Pad pad)
         {
             if (id != pad.Id)
             {

@@ -12,9 +12,10 @@ using Zotik.Models;
 namespace Zotik.Migrations
 {
     [DbContext(typeof(PadsContext))]
-    partial class PadsContextModelSnapshot : ModelSnapshot
+    [Migration("20180805165336_Image-Migration")]
+    partial class ImageMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

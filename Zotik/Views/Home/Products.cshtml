@@ -9,11 +9,16 @@
         <br />
         <div class="row center-block">
             @{
-                    var pads = Model.OrderBy(p => p.Type).ThenBy(p => p.Type).ToList();
+                var pads = Model.OrderBy(p => p.Type).ThenBy(p => p.Type).ToList();
 
-                    foreach (Pad pad in pads)
+                foreach (Pad pad in pads)
+                {
+
+                    string imgSource = string.Empty;
+                    if (pad.Image != null)
                     {
-                        var imgSource = Url.Content("~/images//products/" + pad.ImageName);
+                        imgSource = $"data:image/png;base64, {Convert.ToBase64String(pad.Image)}";
+                    }
 
             <div class="col-sm-4 col-md-3 col-xs-12 text-center">
                 <div class="product-title">
@@ -25,7 +30,7 @@
                 <a href="@Url.Action("Details", "Products", new { id = pad.Id })">
                     <img src="@imgSource"
                          class="img-thumbnail img-responsive"
-                         alt="Дамски Превръзки Дневни Памук 10 броя" />
+                         alt="@pad.Name" />
                 </a>
                 <p>@pad.Description</p>
             </div>
