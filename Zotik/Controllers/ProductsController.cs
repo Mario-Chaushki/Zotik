@@ -20,7 +20,6 @@ namespace Zotik.Controllers
         }
 
         // GET: Products
-        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
             ViewBag.Title = "Продукти";
@@ -28,7 +27,6 @@ namespace Zotik.Controllers
         }
 
         // GET: Products/Details/5
-        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
